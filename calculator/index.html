@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+</head>
+
+<body>
+    <h1>Calculator</h1>
+    <!--sending the data (post) entered in inputs to index.html(action), we want to send it to server  which is at home route (/). By default, it sends the data to current page it is on which is /-->
+    <form action="/" method="post">
+        <label for="first num">First Number</label>
+        <input type="text" name="num1" placeholder="First Number">
+        <label for="second num">Second Number</label>
+        <input type="text" name="num2" placeholder="Second Number">
+        <button type="submit" name="submit">Calculate</button>
+    </form>
+
+</body>
+
+</html>
