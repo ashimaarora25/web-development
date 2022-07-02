@@ -1,10 +1,20 @@
 const express = require("express");
 const https = require("https");
+const bodyParser = require('body-parser');
 
 const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", function (req, res) {
-    const url = "https://api.openweathermap.org/data/2.5/weather?q=London&appid=8e0ae2fdc2946a2cd3cc00484af48383&units=imperial";
+    res.sendFile(__dirname + "/index.html");
+});
+
+app.post("/", function (req, res) {
+
+    const city = req.body.cityName;
+    const apiKey = "8e0ae2fdc2946a2cd3cc00484af48383";
+    const unit = "imperial";
+    const url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=" + unit;
     https.get(url, function (response) {
         console.log(response.statusCode);
         response.on("data", function (data) { //when response starts getting the data
@@ -20,14 +30,13 @@ app.get("/", function (req, res) {
 
 
             //Only 1 res.send() but can have multiple res.write()
-            res.write("<h1>The temperature in " + weatherData.name + " is " + temp + " degrees Fahrenheit.</h1>");
+            res.write("<h1>The temperature in " + city + " is " + temp + " degrees Fahrenheit.</h1>");
             res.write("<h3>The weather description is " + weatherDesc + ".</h3>");
             res.write("<img src=" + urlIcon + ">");
             res.send();
 
         })
     })
-
 })
 
 
