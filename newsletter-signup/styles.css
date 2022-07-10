@@ -26,13 +26,18 @@ body {
     border-bottom-left-radius: 0;
 }
 
-.form-signin input[type="password"] {
+.top {
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
 
-.bd-placeholder-img {
+.middle {
+    border-radius: 0;
+    margin-bottom: -1px;
+}
+
+.bottom {
     font-size: 1.125rem;
     text-anchor: middle;
     -webkit-user-select: none;
