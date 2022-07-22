@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Failure</title>
+    <style>
+        .messg {
+            border: 2px solid black;
+            background-color: lightblue;
+            width: 75%;
+            height: 150px;
+            text-align: center;
+            font-family: sans-serif;
+            margin-left: 15%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="messg">
+        <h1> Uh Oh! </h1>
+        <p> There was a problem signing you up. Please contact a developer or try again later. </p>
+        <form action="/failure" method="POST">
+            <button type="submit" name="button"> Try again </button>
+        </form>
+    </div>
+
+</body>
+
+</html>
